@@ -16,6 +16,12 @@
         <div id="type" style="--type-color: 1,103,255;"></div>
         <div id="bound_to"></div>
         <div id="car_number">1</div>
+        <div id="next">まもなく</div>
+        <div id="station">金山</div>
+        <div id="line" style="--line-color: 50,103,182;">
+          <div id="line_name">CF</div>
+          <div id="station_number">01</div>
+        </div>
         <div id="line_bar" style="--line-color: 50,103,182;"></div>
     </div>
   </body>
@@ -24,6 +30,21 @@
     state = 0;
     type = document.getElementById("type");
     boundTo = document.getElementById("bound_to");
+    station = document.getElementById("station");
+    next = document.getElementById("next");
+
+    dest_jp = "名古屋";
+    dest_hi = "なごや"
+    dest_en = "Nagoya";
+
+    station_jp = "金山";
+    station_hi = "かなやま";
+    station_en = "Kanayama";
+
+    next_jp = "まもなく";
+    next_hi = "まもなく";
+    next_en = "Arriving at"; 
+
     
     function setLanguage(){
       switch (state){
@@ -31,27 +52,36 @@
           type.innerHTML = "快 速";
           type.style.paddingTop = "0";
           type.style.paddingBottom = "0.5vh";
-          boundTo.innerHTML = "名古屋行";
+          boundTo.innerHTML = dest_jp + " 行";
           boundTo.style.paddingTop = "0";
           boundTo.style.paddingBottom = "0.5vh";
+          next.innerHTML = next_jp;
+          next.style.paddingBottom = "1vh";
+          station.innerHTML = station_jp;
           state++
           break;
         case 1:
           type.innerHTML = "快 速";
           type.style.paddingTop = "0";
           type.style.paddingBottom = "0.5vh";
-          boundTo.innerHTML = "なごやゆき";
+          boundTo.innerHTML = dest_hi + "ゆき";
           boundTo.style.paddingTop = "0";
           boundTo.style.paddingBottom = "0.5vh";
+          next.innerHTML = next_hi;
+          next.style.paddingBottom = "1vh";
+          station.innerHTML = station_hi;
           state++
           break;
         default:
           type.innerHTML = "Rapid";
           type.style.paddingTop = "1.5vh";
           type.style.paddingBottom = "0";
-          boundTo.innerHTML = "Bound For Nagoya";
+          boundTo.innerHTML = "Bound For " + dest_en;
           boundTo.style.paddingTop = "1.5vh";
           boundTo.style.paddingBottom = "0";
+          next.innerHTML = next_en;
+          next.style.paddingBottom = "2.5vh";
+          station.innerHTML = station_en;
           state = 0;
           break;
         }

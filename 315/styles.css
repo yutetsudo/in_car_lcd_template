@@ -33,7 +33,9 @@ body {
   width: 19.15vw;
   height: 10.20vh;
   left: 1.05vw;
-  background: linear-gradient(180deg, rgba(var(--type-color),.5), rgb(var(--type-color)), rgb(var(--type-color)));
+  background: 
+    linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255, .2) 50%, rgb(var(--type-color)) 50%, rgba(255,255,255,.2)) padding-box,
+    linear-gradient(0deg, rgba(var(--type-color),0.8), rgb(var(--type-color)), rgb(var(--type-color))) border-box;
 
   display: flex;
   justify-content: center;
@@ -48,7 +50,7 @@ body {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border: 4px solid rgb(var(--type-color));
+  border: 4px solid transparent;
   border-radius: 1.55vh;
 }
 
@@ -70,8 +72,79 @@ body {
   right: 1.05vw;
   padding-top: 1.5vh;
   background: 
-    linear-gradient(180deg, rgb(100,100,100), rgb(50,50,50) 50%, rgb(0,0,0) 50%, rgb(100,100,100)) padding-box,
-    linear-gradient(0deg, rgb(100,100,100), rgb(0,0,0), rgb(0,0,0)) border-box;
+    linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255, .2) 50%, rgb(0,0,0) 50%, rgba(255,255,255,.2)) padding-box,
+    linear-gradient(0deg, rgba(0,0,0,0.8), rgb(0,0,0), rgb(0,0,0)) border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(255,255,255);
+  font-weight: 900;
+  font-size: 7.20vh;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 3px solid transparent;
+  border-radius: 1.55vh;
+}
+
+.header #next {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 3.75vw;
+  bottom: 0;
+
+  color: rgb(0,0,0);
+  font-weight: 500;
+  font-size: 6.65vh;
+}
+
+.header #station {
+  position: absolute;
+  width: 60vw;
+  height: 15.90vh;
+  left: 20.20vw;
+  right: 20.20vw;
+  bottom: 2.65vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  color: rgb(0,0,0);
+  font-weight: 500;
+  font-size: 15.90vh;
+}
+
+.header #line {
+  position: absolute;
+  width: 8.85vw;
+  height: 15.75vh;
+  right: 10.50vw;
+  bottom: 2.65vh;
+  background-color: rgb(255,255,255);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: solid rgb(var(--line-color));
+  border-width: 0.75vh 0.45vw;
+}
+
+.header #line #line_name{
+  position: absolute;
+  height: 5vh;
+  width: 8.10vw;
+  top: 0;
+  background-color: rgb(var(--line-color));
 
   display: flex;
   justify-content: center;
@@ -79,20 +152,28 @@ body {
 
   color: rgb(255,255,255);
   font-weight: bold;
-  font-size: 7.20vh;
-
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  border-radius: 1.55vh;
-  border: 3px solid transparent;
+  font-size: 5vh;
 }
 
+.header #line #station_number {
+  position: absolute;
+  height: 8vh;
+  width: 7.95vw;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(0,0,0);
+  font-weight: extra-bold;
+  font-size: 8.8vh;
+}
 
 .header #line_bar {
   position: absolute;
   bottom: 0;
   width: 100vw;
-  height: 1.10vh;
+  height: 1.65vh;
   background: rgb(var(--line-color));
 }
