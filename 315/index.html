@@ -11,6 +11,54 @@
   </head>
 
   <body>
-    test
+    <div class="header">
+        <div id="color_bar"></div>
+        <div id="type" style="--type-color: 1,103,255;"></div>
+        <div id="bound_to"></div>
+        <div id="car_number">1</div>
+        <div id="line_bar" style="--line-color: 50,103,182;"></div>
+    </div>
   </body>
+
+  <script>
+    state = 0;
+    type = document.getElementById("type");
+    boundTo = document.getElementById("bound_to");
+
+    function setLanguage(){
+      switch (state){
+        case 0:
+          type.innerHTML = "快 速";
+          type.style.paddingTop = "0";
+          type.style.paddingBottom = "0.5vh";
+          boundTo.innerHTML = "名古屋行";
+          boundTo.style.paddingTop = "0";
+          boundTo.style.paddingBottom = "0.5vh";
+          state++
+          break;
+        case 1:
+          type.innerHTML = "快 速";
+          type.style.paddingTop = "0";
+          type.style.paddingBottom = "0.5vh";
+          boundTo.innerHTML = "なごやゆき";
+          boundTo.style.paddingTop = "0";
+          boundTo.style.paddingBottom = "0.5vh";
+          state++
+          break;
+        default:
+          type.innerHTML = "Rapid";
+          type.style.paddingTop = "1.5vh";
+          type.style.paddingBottom = "0";
+          boundTo.innerHTML = "Bound For Nagoya";
+          boundTo.style.paddingTop = "1.5vh";
+          boundTo.style.paddingBottom = "0";
+          state = 0;
+          break;
+        }
+        setTimeout(setLanguage, 4000);
+      }
+
+
+    setLanguage()
+  </script>
 </html>

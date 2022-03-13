@@ -1,6 +1,98 @@
+@import url("helvetica.css");
+
+:root {
+  --type-color: 0,0,0;
+  --line-color: 0,0,0;
+
+  --company-color: 237,109,1;
+}
+
 body {
-  min-width: 1920px;
-  min-height: 1080px;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
+  font-family: Helvetica;
+}
+
+.header {
+  position:relative;
+  height: 32.05vh;
+  /* background-color: rgb(200,200,200); */
+  background-color: rgb(255,255,255);
+}
+
+.header #color_bar {
+  width: 100vw;
+  height: 1.85vh;
+  background: linear-gradient(90deg, rgb(255,255,255), rgb(var(--company-color)), rgb(var(--company-color)), rgb(255,255,255));
+}
+
+.header #type {
+  position: absolute;
+  width: 19.15vw;
+  height: 10.20vh;
+  left: 1.05vw;
+  background: linear-gradient(180deg, rgba(var(--type-color),.5), rgb(var(--type-color)), rgb(var(--type-color)));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(255,255,255);
+  font-weight: bold;
+  font-size: 7.20vh;
+  text-shadow: 1px 1px rgb(0,0,0);
+
+  
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 4px solid rgb(var(--type-color));
+  border-radius: 1.55vh;
+}
+
+.header #bound_to {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: calc((1.05vw*2) + 19.15vw);
+
+  color: rgb(0,0,0);
+  font-weight: 500;
+  font-size: 7.20vh;
+}
+
+.header #car_number {
+  position: absolute;
+  width: 5.70vw;
+  height: 10.20vh;
+  right: 1.05vw;
+  padding-top: 1.5vh;
+  background: 
+    linear-gradient(180deg, rgb(100,100,100), rgb(50,50,50) 50%, rgb(0,0,0) 50%, rgb(100,100,100)) padding-box,
+    linear-gradient(0deg, rgb(100,100,100), rgb(0,0,0), rgb(0,0,0)) border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: rgb(255,255,255);
+  font-weight: bold;
+  font-size: 7.20vh;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: 1.55vh;
+  border: 3px solid transparent;
+}
+
+
+.header #line_bar {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 1.10vh;
+  background: rgb(var(--line-color));
 }
